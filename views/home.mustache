@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>To-Do List</title>
+  <link type="text/css" rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+
+<body>
+  <h1>☠Stuff I Gotta Do☠</h1>
+
+  <section>
+    <form id="todo" action="/" method="post">
+      <input class="inputbox" type="text" name="item" placeholder="What do you need to remember?" value="">
+      <button type="submit" name="button" value="add">Add to the list</button>
+    </form>
+    <form class="addedcontent" action="/update" method="post">
+      <ul id="todo">
+        {{#todos}}
+          <li><input class="checkable" type="checkbox" value="">{{todo}}</li>
+        {{/todos}}
+    </form>
+
+    <h2 class="done" action="/complete" method="post">You did it!</h2>
+      <ul id="completed">
+          <li>{{todo}}</li>
+      </ul>
+
+  </section>
+</body>
+
+</html>
